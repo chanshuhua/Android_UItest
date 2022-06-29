@@ -6,12 +6,19 @@
 '''日志相关'''
 import logging
 import os
+from datetime import datetime
+
 from config_utils import filepath
 
 
+timenow = str(datetime.today().strftime('%Y-%m-%d'))
+print(timenow)
+
 class Logger(object):
 
+    global timenow
 
+    @classmethod
     def logdir(cls):
 
         cls.LOGS_DIR = filepath.FilePath().find_by_dirname('testlog')
@@ -20,12 +27,13 @@ class Logger(object):
 
     @classmethod
     def create_logger(cls):
+
         # 日志配置项
         log_name = "log"
         log_level_input = "DEBUG"
         log_level_console_output = "INFO"
         log_level_file_output = "INFO"
-        log_file_name = "test.log"
+        log_file_name = "{}.log".format(timenow)
         log_formatter = "%(asctime)s - [%(levelname)s] - [%(filename)s - %(funcName)s]: %(message)s"
 
         # # （每创建一个对象，日志收集器的名字如果不一致，创建两个或者以上的对象，使用一个对象来打印日志，打印日志的次数只有一次）
@@ -44,7 +52,7 @@ class Logger(object):
         my_log.addHandler(sh)
         # 设置日志输出到文件的渠道,设置日志输出渠道等级
         fh = logging.FileHandler(filename=os.path.join(cls.logdir(), log_file_name),
-                                 encoding="utf8")
+                                 encoding="utf-8")
         fh.setLevel(log_level_file_output)
         fh.setFormatter(formater)
         # 将输出到文件渠道添加到日志收集器中
