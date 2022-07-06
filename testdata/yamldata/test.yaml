@@ -1,0 +1,16 @@
+# test1
+tests:
+  -
+    case:
+        description: "case简介1"
+        level: "level0"
+        author: "chenshuhua"
+        update: "20220706"
+    param: 2
+    expected: 3
+
+# test2
+  -
+    case: 4
+    param: 5
+    expected: 6

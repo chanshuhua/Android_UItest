@@ -6,13 +6,15 @@
 
 import yaml
 
+from common import path
+
 
 class YamlUtils:
     '''
     获取yaml文件内容
     '''
 
-    def get_yaml_data(self, path):
+    def get_yaml_data(self,path):
         '''
         获取yaml文件内容
         :param path: 文件路径
@@ -23,10 +25,31 @@ class YamlUtils:
         param = []
         expected = []
 
-
-
+        description = []
+        level = []
+        author = []
+        update = []
 
         with open(path, "r+", encoding="utf-8") as file:
+            # dat = yaml.load(f.read(), Loader=yaml.SafeLoader)
             data = yaml.load(stream=file, Loader=yaml.FullLoader)
-            return data
+            tests = data['tests']
+            print(tests)
+            for its in tests:
+                print(its)
+                case.append(its.get('case'))
+                param.append(its.get('param'))
+                expected.append(its.get('expected'))
+            # print(case,param,expected)
+            # parameters = zip(case, param, expected)
+            # print(list(parameters))
+            #     description.append.get('description'))
+                print((its['case']['description']))
+
+
+if __name__ == '__main__':
+    YamlUtils().get_yaml_data(path=path.FilePath().find_by_filename(filname='test.yaml'))
+
+
+
 

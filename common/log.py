@@ -8,20 +8,20 @@ import logging
 import os
 from datetime import datetime
 
-from common import path
+from common.path import FilePath
 
 
 timenow = str(datetime.today().strftime('%Y-%m-%d'))
 print(timenow)
 
-class Logger(object):
+class Logger:
 
     global timenow
 
     @classmethod
     def logdir(cls):
 
-        cls.LOGS_DIR = filepath.FilePath().find_by_dirname('testlog')
+        cls.LOGS_DIR = FilePath().find_by_dirname('testlog')
         print(cls.LOGS_DIR)
         return cls.LOGS_DIR
 
