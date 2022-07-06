@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2022/6/28 13:11
 # @Author  : chenshuhua
-# @File    : filepath.py
+# @File    : path.py
 import os
 
 

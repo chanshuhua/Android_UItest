@@ -8,7 +8,7 @@ import logging
 import os
 from datetime import datetime
 
-from config_utils import filepath
+from common import path
 
 
 timenow = str(datetime.today().strftime('%Y-%m-%d'))
