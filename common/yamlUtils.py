@@ -36,7 +36,6 @@ class YamlUtils:
             tests = data['tests']
             print(tests)
             for its in tests:
-                print(its)
                 case.append(its.get('case'))
                 param.append(its.get('param'))
                 expected.append(its.get('expected'))

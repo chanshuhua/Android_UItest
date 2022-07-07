@@ -2,7 +2,7 @@
 tests:
   -
     case:
-        description: "case简介1"
+        description: "这个case验证的方法……"
         level: "level0"
         author: "chenshuhua"
         update: "20220706"
