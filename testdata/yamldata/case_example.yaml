@@ -1,0 +1,138 @@
+---
+tests:
+#用例1
+- case:
+    description: "添加标签-创建字符串不带value值"
+    level: "level0"
+    author: "chenshuhua"
+    update: "20210527"
+  http:
+    method: POST
+    path: "/gateway/see-management/business/tag/create"
+    params:
+      defaultValue: []
+      isFactor: 1
+      relateTypes:
+        - audio
+        - text
+        - workOrder
+        - workOrderSessions
+      type: 1
+      matchMode: ""
+      suffixes:
+        - audio
+        - text
+        - workOrder
+        - workOrderSessions
+      updater: ""
+      name: "reput"
+      key: "reput"
+      groupId: "reput"
+  expected:
+    code: 0
+
+#用例2
+- case:
+    description: "添加标签-创建字符串带value值"
+    level: "level0"
+    author: "chenshuhua"
+    update: "20210527"
+  http:
+    method: POST
+    path: "/gateway/see-management/business/tag/create"
+    params:
+      defaultValue:
+        - label: key
+          value: value
+      isFactor: 1
+      relateTypes:
+        - audio
+        - text
+        - workOrder
+        - workOrderSessions
+      type: 1
+      matchMode: ""
+      suffixes:
+        - audio
+        - text
+        - workOrder
+        - workOrderSessions
+      updater: ""
+      name: "reput"
+      key: "reput"
+      groupId: "reput"
+  expected:
+    code: 0
+
+
+#用例3
+- case:
+    description: "添加标签-创建数字类型"
+    level: "level0"
+    author: "chenshuhua"
+    update: "20210527"
+  http:
+    method: POST
+    path: "/gateway/see-management/business/tag/create"
+    params:
+      defaultValue: []
+      isFactor: 1
+      relateTypes:
+        - audio
+        - text
+        - workOrder
+        - workOrderSessions
+      type: 2
+      matchMode: ""
+      suffixes:
+        - audio
+        - text
+        - workOrder
+        - workOrderSessions
+      updater: ""
+      name: "reput"
+      key: "reput"
+      groupId: "reput"
+  expected:
+    code: 0
+
+#用例4
+- case:
+    description: "添加标签-创建日期类型"
+    level: "level0"
+    author: "chenshuhua"
+    update: "20210527"
+  http:
+    method: POST
+    path: "/gateway/see-management/business/tag/create"
+    params:
+      defaultValue: []
+      isFactor: 1
+      relateTypes:
+        - audio
+        - text
+        - workOrder
+        - workOrderSessions
+      type: 3
+      matchMode: ""
+      suffixes:
+        - audio
+        - text
+        - workOrder
+        - workOrderSessions
+      updater: ""
+      name: "reput"
+      key: "reput"
+      groupId: "reput"
+  expected:
+    code: 0
+
+
+
+
+
+
+
+
+
+
