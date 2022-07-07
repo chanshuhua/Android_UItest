@@ -3,6 +3,7 @@
 # @Time    : 2022/7/6 19:30
 # @Author  : chenshuhua
 # @File    : yamlUtils.py
+import json
 
 import yaml
 
@@ -32,18 +33,22 @@ class YamlUtils:
 
         with open(path, "r+", encoding="utf-8") as file:
             # dat = yaml.load(f.read(), Loader=yaml.SafeLoader)
-            data = yaml.load(stream=file, Loader=yaml.FullLoader)
+            data = yaml.load(file.read(), Loader=yaml.FullLoader)
             tests = data['tests']
             print(tests)
             for its in tests:
                 case.append(its.get('case'))
                 param.append(its.get('param'))
                 expected.append(its.get('expected'))
-            # print(case,param,expected)
-            # parameters = zip(case, param, expected)
-            # print(list(parameters))
-            #     description.append.get('description'))
-                print((its['case']['description']))
+            for ca in case:
+                description.append(ca.get('description'))
+                level.append(ca.get('level'))
+                author.append(ca.get('author'))
+                update.append(ca.get('update'))
+
+            parameters = zip(description,level,author,update, param, expected)
+            print(list(parameters))
+
 
 
 if __name__ == '__main__':
