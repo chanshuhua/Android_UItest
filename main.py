@@ -2,10 +2,9 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-import time
-from copy import copy, deepcopy
-import datetime
 
+
+import pytz
 from appium import webdriver
 # 初始化参数
 desired_caps = {
@@ -21,38 +20,11 @@ desired_caps = {
     # 'automationName': 'UiAutomator2'
 }
 # 连接Appium Server，初始化自动化环境
-# driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
-def convert(seconds):
 
-    # seconds = seconds % (24 * 3600)
-    #
-    # hour = seconds // 3600
-    #
-    # seconds %= 3600
-    #
-    # minutes = seconds // 60
-    #
-    # seconds %= 60
-    #
-    # return "%02d:%02d:%02d" % (hour, minutes, seconds) #formatting
-
-    return str(datetime.timedelta(seconds=seconds))
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    # 日出前5
-    n0 = 25920 -32.4295165;-3.8566736
-    print(convert(n0))
-    # 日出时
-    n1 = 26220
-    print(convert(n1))
-    # 日出后5min
-    n2 = 30060
-    print(convert(n2))
-
-    s0 = 41160
-    s1 = 38160
-    print(convert(s0))
-    print(convert(s1))
+    pass

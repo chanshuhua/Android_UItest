@@ -1,7 +1,16 @@
-import pytest
+import logging
 
-@pytest.fixture(scope="function",name="desired_caps")
+import pytest
+from appium import webdriver
+from common.branchCheck import branchCheck
+from common.log import Logger
+
+
+@pytest.fixture(scope="function",name="case_init")
 def case_init():
-    print("module1 before")
-    yield
-    print("module1 end")
+    desired_caps = dict(branchCheck().confdata)
+    print(desired_caps)
+    Logger().info(desired_caps)
+    webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+
+

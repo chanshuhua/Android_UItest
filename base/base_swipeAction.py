@@ -32,30 +32,32 @@ class BaseSwipeAction:
                           end_y=y * end_y_ratio,
                           duration=duration)
 
-    def swipe_left(self):
+    def swipe_left_global(self):
         '''
         左滑
         :return:
         '''
         self.swipe(0.8, 0.8, 0.2, 0.8)
 
-    def swipe_right(self):
+    def swipe_right_global(self):
         '''
         右滑
         :return:
         '''
         self.swipe(0.2, 0.8, 0.8, 0.8)
 
-    def swipe_up(self):
+    def swipe_up_global(self):
         '''
         上滑，加载更多数据
         :return:
         '''
         self.swipe(0.5, 0.8, 0.5, 0.2)
 
-    def swipe_down(self):
+    def swipe_down_global(self):
         '''
         下滑，刷新
         :return:
         '''
         self.swipe(0.5, 0.2, 0.5, 0.8)
+
+        

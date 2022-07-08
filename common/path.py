@@ -21,7 +21,7 @@ class FilePath:
             'yamldata':'testdata/yamldata'
         }
         self.file = {
-            'test.txt':'*.text'
+            'conf.ini':'conf.ini'
         }
 
     def find_absopath(self):
@@ -69,5 +69,5 @@ if __name__ == '__main__':
     # print(FilePath().find_by_dirname('testss'))
     # print(FilePath().find_by_filename('test.yaml'))
     # print(FilePath().find_by_filename('test.txt'))
-
+    print(FilePath().find_by_filename('conf.ini'))
     pass
