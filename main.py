@@ -1,12 +1,8 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-import pytz
-from appium import webdriver
 # 初始化参数
+from appium import webdriver
+
 desired_caps = {
     'platformName': 'Android',  # 被测手机是安卓
     'platformVersion': '11',  # 手机安卓版本

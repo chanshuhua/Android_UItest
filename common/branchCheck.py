@@ -4,9 +4,13 @@
 # @Author  : chenshuhua
 # @File    : branchCheck.py
 import configparser
-
-from appium import webdriver
 from common.path import FilePath
+
+
+
+class MyConfigParser(configparser.ConfigParser):
+    def optionxform(self, optionstr):
+        return optionstr
 
 
 class branchCheck:
@@ -27,15 +31,18 @@ class branchCheck:
         :return:
         '''
         conf_path = FilePath().find_by_filename('conf.ini')
-        self.conf = configparser.ConfigParser()
-        self.conf.read(conf_path, encoding='utf-8')
-        self.conf_name = self.conf.options('config')
-        for name in self.conf_name:
-            self.conf_value.append(self.conf.get('config',name))
-        conf_data = zip(self.conf_name,self.conf_value)
+        self.conf = MyConfigParser()
+        self.conf.read(conf_path,encoding='utf-8')
+        conf_data = dict(self.conf.items(section='config'))
+        for data in conf_data:
+            if conf_data[data].lower() == 'true':
+                conf_data[data] = True
+            elif conf_data[data].lower() == 'false':
+                conf_data[data] = False
         return conf_data
 
 
 
+
 if __name__ == '__main__':
-    print(list(branchCheck().confdata))
+    print(branchCheck().confdata)

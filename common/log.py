@@ -26,7 +26,7 @@ class Logger:
         return cls.LOGS_DIR
 
     @classmethod
-    def create_logger(cls):
+    def logger(cls):
 
         # 日志配置项
         log_name = "log"
@@ -65,4 +65,4 @@ class Logger:
 
 
 if __name__ == '__main__':
-    log = Logger.create_logger()
+    log = Logger.logger()
