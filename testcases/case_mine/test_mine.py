@@ -9,7 +9,6 @@
 '''
 import os
 from time import sleep
-
 import allure
 import pytest
 
@@ -19,11 +18,13 @@ import pytest
 class Test_Mine:
 
     def test_login(self):
+        print("1")
         assert 1 == 1
 
 
 
-if __name__ == '__main__':
-    pytest.main(['-sv','test_mine.py'])
-    sleep(1)
-    os.system("allure generate ./././report/temp -o ./report/allure_reports --clean ")
+# if __name__ == '__main__':
+#     pytest.main(['-sv','test_mine.py','--alluredir','./report'])
+#     sleep(1)
+#     os.system("allure serve allure ")
+    # pass

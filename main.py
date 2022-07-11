@@ -21,6 +21,5 @@ driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     pass
