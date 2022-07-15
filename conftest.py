@@ -1,7 +1,6 @@
 import logging
 import os
 import time
-
 import allure
 import pytest
 from appium import webdriver
@@ -36,7 +35,12 @@ def env():
 @pytest.fixture(scope="session")
 def allure_getreport():
     yield
-    os.system()
+    # os.system()
+    os.system("allure generate ./reports/allure-temp -o ../../reports/allure-html --clean")
+    time.sleep(5)
+    os.system("allure open ../../reports/allure-html")
+
+
 
 # if __name__ == '__main__':
     # driver_operation()

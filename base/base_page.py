@@ -17,7 +17,7 @@ class BasePage:
     def locator(self,*loc):
         '''
         定位元素方法
-        :param loc:
+        :param loc: x,y 坐标
         :return:
         '''
         return self.driver.find_element(*loc)
@@ -38,6 +38,14 @@ class BasePage:
         :return:
         '''
         self.locator(loc).click()
+
+    def long_press(self,loc):
+        '''
+        长按元素
+        :param loc:
+        :return:
+        '''
+        self.locator(loc).perform()
 
     def clear(self,loc):
         '''

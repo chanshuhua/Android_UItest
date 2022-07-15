@@ -1,6 +1,8 @@
 
 
 # 初始化参数
+import os
+
 from appium import webdriver
 
 desired_caps = {
@@ -16,10 +18,10 @@ desired_caps = {
     # 'automationName': 'UiAutomator2'
 }
 # 连接Appium Server，初始化自动化环境
-driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+# driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
 
 
 
 if __name__ == '__main__':
-    pass
+    print(os.environ)

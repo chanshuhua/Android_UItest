@@ -5,7 +5,7 @@
 # @File    : testsome.py
 import datetime
 
-import TimezoneFinder as TimezoneFinder
+# import TimezoneFinder as TimezoneFinder
 import pytz
 from tzwhere import tzwhere
 
@@ -29,21 +29,22 @@ def convert(seconds):
 
 
 
-
 def timez(longitude,latitude):
     tz = tzwhere.tzwhere()
     time_zone = tz.tzNameAt(longitude,latitude)
-    tf = TimezoneFinder()
+    # tf = TimezoneFinder()
     print("地区:{}".format(time_zone))
-    time = pytz.timezone(tf.timezone_at(lng=longitude, lat=latitude)).localize(
-        datetime.datetime(2022, 7, 8)).strftime('%z')
+    # time = pytz.timezone(tf.timezone_at(lng=longitude, lat=latitude)).localize(
+    #     datetime.datetime(2022, 7, 8)).strftime('%z')
 
-    # invert sign and return in 'Etc/GMT' format
-    if time[0] == '-':
-        time_zone = 'Etc/GMT+' + time[2]
-    else:
-        time_zone = 'Etc/GMT-' + time[2]
+    # # invert sign and return in 'Etc/GMT' format
+    # if time[0] == '-':
+    #     time_zone = 'Etc/GMT+' + time[2]
+    # else:
+    #     time_zone = 'Etc/GMT-' + time[2]
 
 if __name__ == '__main__':
-    timez(-25.274398,133.775136)
-    print(convert(78660))
+    timez(31.230416,121.473701)
+    print(convert(75780))
+    print(convert(39540))
+    print(convert(56760))
