@@ -15,11 +15,10 @@ import pytest
 
 
 @pytest.mark.usefixtures("driver_operation")
-@allure.feature("我的页面")
+@allure.feature("test_mine")
 @pytest.mark.usefixtures("allure_getreport")
 class Test_Mine:
 
-    @allure.tag("测试一下")
     def test_login(self):
         print("1")
         assert 1 == 1
