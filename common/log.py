@@ -27,6 +27,15 @@ class Logger:
 
     @classmethod
     def logger(cls):
+        # log_cli = 1  # 代表ture 1代表执行日志显示更详细
+        # log_cli_level = DEBUG  # 代表日志级别
+        # log_cli_date_format = % Y: % m: % d % H: % M: % S  # 代表日志时间
+        # log_cli_format = % (asctime)s - % (filename)s - % (module)s - % (funcName)s - % (lineno)d - % (levelname)s - % (message)s  # 代表日志格式
+        # log_file =./ logs / test.log  # 代表日志输入文件路径 项目根目录下的logs文件中
+        # log_file_level = DEBUG
+        # log_file_date_format = % Y: % m: % d % H: % M: % S
+        # log_file_format = % (asctime)s - % (filename)s - % (module)s - % (funcName)s - % (lineno)d - % (levelname)s - % (message)s
+
 
         # 日志配置项
         log_name = "log"

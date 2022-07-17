@@ -36,9 +36,10 @@ def env():
 def allure_getreport():
     yield
     # os.system()
-    os.system("allure generate ./reports/allure-temp -o ../../reports/allure-html --clean")
-    time.sleep(5)
-    os.system("allure open ../../reports/allure-html")
+    os.system("allure generate ./reports/allure-temp -o ./reports/allure-html --clean")
+    time.sleep(2)
+    os.system("allure open ./reports/allure-html")
+    print("allure-report is opened...")
 
 
 
