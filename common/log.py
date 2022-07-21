@@ -15,6 +15,8 @@ timenow = str(datetime.today().strftime('%Y-%m-%d'))
 print(timenow)
 
 class Logger:
+    '''未完善 用pytest本身的logcli'''
+    # TODO
 
     global timenow
 

@@ -1,0 +1,11 @@
+2022:07:18 13:36:20 - remote_connection.py - POST http://localhost:4723/wd/hub/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"platformName": "Android", "appium:platformVersion": "11", "appium:deviceName": "xxx", "appium:appPackage": "com.theswitchbot.switchbot", "appium:appActivity": ".index.ui.SplashActivity", "appium:unicodeKeyboard": true, "appium:resetKeyboard": true, "appium:noReset": false, "appium:newCommandTimeout": "6000"}}}
+2022:07:18 13:36:20 - connectionpool.py - Starting new HTTP connection (1): localhost:4723
+2022:07:18 13:36:24 - retry.py - Incremented Retry for (url='/wd/hub/session'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022:07:18 13:36:24 - connectionpool.py - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F44EB471F0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /wd/hub/session
+2022:07:18 13:36:24 - connectionpool.py - Starting new HTTP connection (2): localhost:4723
+2022:07:18 13:36:28 - retry.py - Incremented Retry for (url='/wd/hub/session'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2022:07:18 13:36:28 - connectionpool.py - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F44EB469B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /wd/hub/session
+2022:07:18 13:36:28 - connectionpool.py - Starting new HTTP connection (3): localhost:4723
+2022:07:18 13:36:32 - retry.py - Incremented Retry for (url='/wd/hub/session'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2022:07:18 13:36:32 - connectionpool.py - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F44EB46830>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /wd/hub/session
+2022:07:18 13:36:32 - connectionpool.py - Starting new HTTP connection (4): localhost:4723

@@ -14,13 +14,13 @@ desired_caps = dict(branchCheck().confdata)
 @pytest.fixture(scope="session")
 def driver_operation():
     try:
-        # desired_caps = dict(branchCheck().confdata)
+        desired_caps = dict(branchCheck().confdata)
         driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
         # 后置关闭
-        # yield driver
-        # time.sleep(1)
-        # driver.close_app()
-        # print("\n关闭driver")
+        yield driver
+        time.sleep(1)
+        driver.close_app()
+        print("\n关闭driver")
 
     except IOError:
         Logger.logger()
@@ -28,8 +28,8 @@ def driver_operation():
 
 @pytest.fixture(scope="session")
 def env():
-    allure.description(desired_caps)
-    return
+    # TODO
+    '''起appium服务器'''
 
 
 @pytest.fixture(scope="session")
@@ -40,7 +40,6 @@ def allure_getreport():
     time.sleep(2)
     os.system("allure open ./reports/allure-html")
     print("allure-report is opened...")
-
 
 
 # if __name__ == '__main__':
